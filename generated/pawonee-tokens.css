@@ -1,0 +1,32 @@
+/* DIBANGKITKAN dari tokens/tokens.json (v1.0.0) oleh scripts/generate-tokens.mjs. Jangan edit manual. */
+:root {
+  --pwn-warna-primer: #E8590C;
+  --pwn-warna-latar: #FFF9F2;
+  --pwn-warna-teks: #212529;
+  --pwn-warna-teks-sekunder: #495057;
+  --pwn-warna-teks-di-atas-primer: #FFFFFF;
+  --pwn-warna-permukaan: #FFFFFF;
+  --pwn-warna-aksen: #2F9E44;
+  --pwn-warna-aksen-tegas: #237A35;
+  --pwn-warna-teks-di-atas-aksen-tegas: #FFFFFF;
+  --pwn-warna-peringatan-pedas: #E03131;
+  --pwn-radius-kartu: 16px;
+  --pwn-radius-tombol: 12px;
+  --pwn-radius-lencana: 999px;
+  --pwn-jarak-kartu-padding: 16px;
+  --pwn-jarak-antar-kartu: 12px;
+  --pwn-jarak-layar-padding: 16px;
+  --pwn-ukuran-sentuh-min: 44px;
+  --pwn-ukuran-kartu-lebar-maks: 320px;
+  --pwn-tipografi-judul-layar-ukuran: 24px;
+  --pwn-tipografi-judul-layar-berat: 700;
+  --pwn-tipografi-judul-kartu-ukuran: 18px;
+  --pwn-tipografi-judul-kartu-berat: 700;
+  --pwn-tipografi-label-tombol-ukuran: 18px;
+  --pwn-tipografi-label-tombol-berat: 700;
+  --pwn-tipografi-meta-kartu-ukuran: 13px;
+  --pwn-tipografi-meta-kartu-berat: 400;
+  --pwn-tipografi-lencana-ukuran: 12px;
+  --pwn-tipografi-lencana-berat: 700;
+  --pwn-rasio-gambar: 4 / 3;
+}

@@ -1,11 +1,12 @@
 {
   "name": "pawonee-design",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "react": "19.0.0"
-  },
-  "devDependencies": {
-    "typescript": "5.7.2"
+  "type": "module",
+  "description": "Token desain dan spesifikasi Pawonee (framework-agnostik; tanpa dependensi runtime).",
+  "scripts": {
+    "tokens": "node scripts/generate-tokens.mjs",
+    "tokens:check": "node scripts/generate-tokens.mjs --check",
+    "test": "bun test"
   }
 }
