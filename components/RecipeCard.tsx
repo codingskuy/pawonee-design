@@ -1,3 +1,4 @@
+// USANG (PWN-DSG-004): referensi React lama, JANGAN diadopsi. Web target Svelte 5; sumber kebenaran = components/RecipeCard.md.
 // Implementasi referensi kartu resep untuk web (React 19).
 // Data mengikuti modul `:shared:pantry-resep` milik Pawonee.
 
