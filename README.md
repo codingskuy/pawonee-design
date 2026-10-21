@@ -10,13 +10,16 @@ Sistem desain Pawonee — **Divisi Pawonee (AI Cooking Assistant)**, org `Coding
 
 ```
 tokens/tokens.json            # warna, radius, tipografi (satu sumber)
+scripts/generate-tokens.mjs   # validasi + pembangkit CSS/Compose (bun run tokens)
+generated/                    # pawonee-tokens.css, PawoneeTokens.kt (dibangkitkan)
+docs/tokens-pemetaan.md       # pemetaan token -> Compose/CSS
 components/RecipeCard.md      # spesifikasi kartu resep (anatomi, varian, aksesibilitas)
 components/RecipeCard.tsx     # implementasi referensi React untuk web
 ```
 
 ## Token (ringkas)
 
-Warna primer `#E8590C` (oranye Pawonee), latar `#FFF9F2`, teks `#212529`. Radius kartu 16, tombol 12. Lihat `tokens/tokens.json` untuk nilai lengkap.
+Warna primer `#E8590C` (oranye Pawonee), latar `#FFF9F2`, teks `#212529`. Radius kartu 16, tombol 12, rasio gambar 4:3. Pemetaan ke Compose/CSS: [docs/tokens-pemetaan.md](docs/tokens-pemetaan.md). Lihat `tokens/tokens.json` untuk nilai lengkap.
 
 ## Aturan kartu resep
 
@@ -29,3 +32,7 @@ Warna primer `#E8590C` (oranye Pawonee), latar `#FFF9F2`, teks `#212529`. Radius
 - [pawonee-app-kmp](https://github.com/Coding-Skuy/pawonee-app-kmp)
 - [pawonee-web](https://github.com/Coding-Skuy/pawonee-web)
 - [pawonee-ai-models](https://github.com/Coding-Skuy/pawonee-ai-models)
+
+## Figma
+
+Link Figma: **belum terdaftar** — berkas Figma belum dibuat/dibagikan (placeholder; isi oleh pemilik desain: `https://www.figma.com/design/<kunci-berkas>`). Token di repo ini adalah sumber kebenaran sementara.
