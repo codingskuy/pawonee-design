@@ -1,0 +1,117 @@
+{
+  "versi": "1.0.0",
+  "catatan": "Sumber mesin-terbaca untuk flow Pawonee. Selektor: nilai `id` dipakai identik sebagai testTag (Compose) dan data-testid (web). Maestro: `id:` untuk testTag lewat `testTagsAsResourceId`, web lewat `data-testid`.",
+  "deepLink": {
+    "pola": "pawonee://resep/{id}?jiwa={n}",
+    "contoh": "pawonee://resep/R-04?jiwa=4",
+    "param": { "id": "R-01..R-12", "jiwa": "bulat 1..8" }
+  },
+  "layarMobile": [
+    {
+      "nama": "beranda",
+      "tujuan": "Masuk aplikasi; atur jiwa dan mode hemat lalu lihat rekomendasi teratas dari stok.",
+      "ke": ["stok", "rekomendasi", "preferensi", "riwayat"],
+      "selektor": [
+        { "id": "beranda", "peran": "akar layar", "dipakaiWeb": true },
+        { "id": "jiwa", "peran": "stepper jiwa 1-8", "dipakaiWeb": true },
+        { "id": "mode-hemat", "peran": "saklar mode hemat", "dipakaiWeb": true },
+        { "id": "hasil", "peran": "daftar rekomendasi (maks 5)", "dipakaiWeb": true },
+        { "id": "item-resep", "peran": "satu kartu resep", "dipakaiWeb": true },
+        { "id": "galat", "peran": "banner galat/pesan luring", "dipakaiWeb": true },
+        { "id": "nav-stok", "peran": "tab ke stok" },
+        { "id": "nav-preferensi", "peran": "tab ke preferensi" },
+        { "id": "nav-riwayat", "peran": "tab ke riwayat" }
+      ]
+    },
+    {
+      "nama": "stok",
+      "tujuan": "Lihat stok dapur (dibaca dari Pedaree; hanya baca) dengan grade dan hari kedaluwarsa.",
+      "ke": ["beranda", "rekomendasi"],
+      "selektor": [
+        { "id": "stok", "peran": "akar layar" },
+        { "id": "stok-daftar", "peran": "daftar stok" },
+        { "id": "stok-item", "peran": "satu baris stok (nama, gram, kodeGrade, kedaluwarsaHari)" },
+        { "id": "stok-usang", "peran": "penanda data usang (header X-Data-Usang)" },
+        { "id": "stok-kosong", "peran": "keadaan kosong" },
+        { "id": "stok-segarkan", "peran": "tarik/segarkan" }
+      ]
+    },
+    {
+      "nama": "rekomendasi",
+      "tujuan": "Daftar rekomendasi lengkap: skor total, alasan 2 kalimat, belanja tambahan.",
+      "ke": ["resepDetail", "beranda"],
+      "selektor": [
+        { "id": "rekomendasi", "peran": "akar layar" },
+        { "id": "rekomendasi-daftar", "peran": "daftar kartu (varian penuh)" },
+        { "id": "rekomendasi-item", "peran": "satu kartu" },
+        { "id": "rekomendasi-skor", "peran": "skor total 0-100" },
+        { "id": "rekomendasi-alasan", "peran": "alasan 2 kalimat" },
+        { "id": "rekomendasi-belanja", "peran": "belanja tambahan (nama, gram, perkiraan Rp)" },
+        { "id": "rekomendasi-kosong", "peran": "keadaan kosong (semua tersaring)" }
+      ]
+    },
+    {
+      "nama": "resepDetail",
+      "tujuan": "Detail resep dengan bahan terskala sesuai jiwa, langkah, belanja tambahan, dan aksi bagi/cetak.",
+      "ke": ["rekomendasi", "riwayat"],
+      "dariDeepLink": true,
+      "selektor": [
+        { "id": "resep-detail", "peran": "akar layar" },
+        { "id": "resep-jiwa", "peran": "pengatur jiwa 1-8" },
+        { "id": "resep-bahan", "peran": "daftar bahan terskala" },
+        { "id": "resep-langkah", "peran": "daftar langkah" },
+        { "id": "resep-belanja", "peran": "belanja tambahan" },
+        { "id": "resep-masak", "peran": "tombol Sudah dimasak (catat riwayat)" },
+        { "id": "resep-bagi", "peran": "tombol bagi (tautan halaman publik)" }
+      ]
+    },
+    {
+      "nama": "preferensi",
+      "tujuan": "Editor profil keluarga; memuat 4 profil baku sebagai titik awal.",
+      "ke": ["beranda"],
+      "selektor": [
+        { "id": "preferensi", "peran": "akar layar" },
+        { "id": "profil-pilih-budi", "peran": "profil baku Budi 4 jiwa" },
+        { "id": "profil-pilih-sari", "peran": "profil baku Sari balita" },
+        { "id": "profil-pilih-vegetarian", "peran": "profil baku vegetarian 3 jiwa" },
+        { "id": "profil-pilih-warung", "peran": "profil baku warung 8 jiwa" },
+        { "id": "profil-jiwa", "peran": "jumlah jiwa 1-8" },
+        { "id": "profil-alergi", "peran": "pilihan alergi" },
+        { "id": "profil-pantangan", "peran": "pilihan pantangan" },
+        { "id": "profil-budget", "peran": "budget per makan (Rp bulat)" },
+        { "id": "profil-pedas", "peran": "level pedas 0-3" },
+        { "id": "profil-alat", "peran": "alat masak" },
+        { "id": "profil-simpan", "peran": "tombol simpan" }
+      ]
+    },
+    {
+      "nama": "riwayat",
+      "tujuan": "Riwayat masak dan serapan G2 mingguan.",
+      "ke": ["beranda", "resepDetail"],
+      "selektor": [
+        { "id": "riwayat", "peran": "akar layar", "dipakaiWeb": true },
+        { "id": "riwayat-item", "peran": "satu masakan (resep, jiwa, gram G2, tanggal)" },
+        { "id": "riwayat-serapan", "peran": "ringkasan serapan mingguan" },
+        { "id": "riwayat-kosong", "peran": "keadaan kosong" }
+      ]
+    }
+  ],
+  "rutaWeb": [
+    { "rute": "/", "setaraMobile": ["beranda", "rekomendasi"], "selektorDipakai": ["beranda", "jiwa", "mode-hemat", "hasil", "item-resep", "galat", "riwayat"] },
+    { "rute": "/stok", "setaraMobile": ["stok"], "selektorDipakai": ["stok", "stok-daftar", "stok-item", "stok-usang", "stok-kosong"] },
+    { "rute": "/resep/[id]", "setaraMobile": ["resepDetail"], "publik": true, "selektorDipakai": ["resep-publik", "buka-aplikasi", "cetak", "resep-bahan", "resep-langkah", "resep-belanja", "resep-jiwa"] },
+    { "rute": "/preferensi", "setaraMobile": ["preferensi"], "selektorDipakai": ["preferensi", "profil-pilih-budi", "profil-pilih-sari", "profil-pilih-vegetarian", "profil-pilih-warung", "profil-jiwa", "profil-alergi", "profil-pantangan", "profil-budget", "profil-pedas", "profil-alat", "profil-simpan"] },
+    { "rute": "/riwayat", "setaraMobile": ["riwayat"], "selektorDipakai": ["riwayat", "riwayat-item", "riwayat-serapan", "riwayat-kosong"] }
+  ],
+  "selektorTambahanWeb": [
+    { "id": "resep-publik", "peran": "akar halaman publik tanpa login", "dipakaiWeb": true },
+    { "id": "buka-aplikasi", "peran": "tombol/tautan Buka di aplikasi (deep link)", "dipakaiWeb": true },
+    { "id": "cetak", "peran": "tombol cetak 1 halaman", "dipakaiWeb": true }
+  ],
+  "profilBaku": [
+    { "kunci": "budi", "nama": "Budi, 4 jiwa", "jumlahJiwa": 4, "komposisi": { "dewasa": 2, "anak": 2, "balita": 0, "lansia": 0 }, "alergi": [], "pantangan": ["halal-selalu"], "budgetPerMakan": 35000, "levelPedas": 2, "alatMasak": ["kompor", "wajan", "panci"], "sumberBelanja": "campuran" },
+    { "kunci": "sari", "nama": "Sari, keluarga dengan balita", "jumlahJiwa": 3, "komposisi": { "dewasa": 2, "anak": 0, "balita": 1, "lansia": 0 }, "alergi": [], "pantangan": ["rendah-garam"], "budgetPerMakan": 35000, "levelPedas": 0, "alatMasak": ["kompor", "wajan", "panci", "kukusan"], "sumberBelanja": "campuran" },
+    { "kunci": "vegetarian", "nama": "Vegetarian, 3 jiwa", "jumlahJiwa": 3, "komposisi": { "dewasa": 3, "anak": 0, "balita": 0, "lansia": 0 }, "alergi": [], "pantangan": ["vegetarian-nabati"], "budgetPerMakan": 35000, "levelPedas": 1, "alatMasak": ["kompor", "wajan", "panci"], "sumberBelanja": "campuran" },
+    { "kunci": "warung", "nama": "Warung, 8 jiwa", "jumlahJiwa": 8, "komposisi": { "dewasa": 8, "anak": 0, "balita": 0, "lansia": 0 }, "alergi": [], "pantangan": [], "budgetPerMakan": 45000, "levelPedas": 2, "alatMasak": ["kompor", "wajan", "panci", "kukusan"], "sumberBelanja": "pedaree-stok" }
+  ]
+}
