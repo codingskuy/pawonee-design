@@ -1,0 +1,25 @@
+{
+  "catatan": "Contoh sah skema Rekomendasi (openapi pawonee-backend-service). Harga hanyalah contoh dari harga Lumbung G2 per 100 g; bukan sumber angka.",
+  "jiwa": 4,
+  "budgetPerMakan": 35000,
+  "rekomendasi": {
+    "resep": {
+      "id": "R-12",
+      "nama": "Capcay kuah",
+      "kelompok": "kuah",
+      "waktuMenit": 25,
+      "kisaranBiayaRp": [18000, 26000]
+    },
+    "skorTotal": 87.5,
+    "alasan": "Wortel dan kol layu menyerap 700 g stok grade-2 yang segera kedaluwarsa. Satu wajan dan 25 menit sudah cukup untuk 4 jiwa.",
+    "bahanTerskala": [
+      { "namaBahan": "wortel bengkok", "gram": 300 },
+      { "namaBahan": "kol", "gram": 400 },
+      { "namaBahan": "bawang putih", "gram": 20 }
+    ],
+    "belanjaTambahan": [
+      { "namaBahan": "sawi hijau", "gram": 200, "perkiraanRp": 3000 },
+      { "namaBahan": "bakso ikan", "gram": 150, "perkiraanRp": 7500 }
+    ]
+  }
+}
